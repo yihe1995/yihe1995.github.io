@@ -162,8 +162,13 @@
     display: flex;            /* 图在左，字在右 */
     overflow: hidden;
 }
+.item-link,
+.item-link h3,
+.item-link .item-count,
+.item-link p {
+    text-decoration: none;    /* 整卡可点击链接，去掉所有下划线 */
+}
 .item-link {
-    text-decoration: none;    /* 整卡可点击链接 */
     color: inherit;
     transition: transform .2s, box-shadow .2s;
 }
