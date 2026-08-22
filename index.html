@@ -4,14 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
-        h1 { color: #0366d6; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>👋 你好，我是 YOUR_NAME</h1>
-    <p>欢迎来到我的个人主页！</p>
-    <p>你可以在 <a href="https://github.com/YOUR_USERNAME">我的 GitHub</a> 上看到更多项目。</p>
+    <!-- ========== 你的内容写在这里 ========== -->
+
+    <!-- 主布局：左侧个人介绍 + 中间 items -->
+    <div class="layout">
+
+        <!-- 顶部：个人介绍（横向大栏） -->
+        <div class="profile card">
+            <div class="profile-left">
+                <div class="profile-avatar"><img src="images/head_icon.jpg" alt="头像"></div>
+                <h2 class="profile-name">年少爱喝苹果醋</h2>
+                <div class="profile-tags">
+                    <span>游戏开发工程师</span>
+                    <span>独立游戏制作人</span>
+                </div>
+                <p class="profile-motto">小重山，念一遍又一遍</p>
+                <ul class="profile-info">
+                    <li><span>姓名</span><em>长一赫</em></li>
+                    <li><span>性别</span><em>男</em></li>
+                    <li><span>现居住地</span><em>上海</em></li>
+                    <li><span>喜欢</span><em>游戏、旅行、摄影、看世界、看人生</em></li>
+                </ul>
+                <div class="profile-intro">
+                    <span class="profile-intro-title">个人简介</span>
+                    <p class="profile-intro-text">一名从业十年的游戏开发工程师，曾参与过知名游戏项目《仙境传说 · 爱如初见》、《石器时代 · 重生》、《猫灵相册》等项目的研发制作。</p>
+                </div>
+            </div>
+            <div class="profile-projects">
+                <span class="profile-project-title">参与项目</span>
+                <div class="profile-projects-body">
+                    <div class="profile-projects-list">
+                        <img src="images/bg/game_ro.png" alt="仙境传说">
+                        <img src="images/bg/game_sa.png" alt="石器时代">
+                    </div>
+                    <img class="project-neko" src="images/bg/game_neko.png" alt="猫灵相册">
+                </div>
+            </div>
+        </div>
+
+        <!-- 中间：items -->
+        <main class="items">
+            <article class="item card">
+                <div class="item-cover"><img src="images/card_1.png" alt=""></div>
+                <div class="item-body">
+                    <h3>游戏开发 · 架构篇</h3>
+                    <span class="item-count">0篇文集</span>
+                    <p>Unity游戏客户端框架</p>
+                </div>
+            </article>
+            <article class="item card">
+                <div class="item-cover"><img src="images/card_2.png" alt=""></div>
+                <div class="item-body">
+                    <h3>游戏开发 · 战斗篇</h3>
+                    <span class="item-count">0篇文集</span>
+                    <p>游戏战斗系统</p>
+                </div>
+            </article>
+            <article class="item card">
+                <div class="item-cover"><img src="images/card_3.png" alt=""></div>
+                <div class="item-body">
+                    <h3>游戏开发 · 渲染篇</h3>
+                    <span class="item-count">0篇文集</span>
+                    <p>Unity Shader</p>
+                </div>
+            </article>
+            <article class="item card">
+                <div class="item-cover"><img src="images/card_4.png" alt=""></div>
+                <div class="item-body">
+                    <h3>游戏开发 · 性能篇</h3>
+                    <span class="item-count">0篇文集</span>
+                    <p>Unity游戏性能优化</p>
+                </div>
+            </article>
+        </main>
+
+    </div>
+
 </body>
 </html>
