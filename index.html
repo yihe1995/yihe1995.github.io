@@ -47,41 +47,73 @@
 
         <!-- 中间：items -->
         <main class="items">
-            <article class="item card">
+            <a class="item card item-link" href="article.html?category=game_framework" data-category="game_framework">
                 <div class="item-cover"><img src="images/card_1.png" alt=""></div>
                 <div class="item-body">
                     <h3>游戏开发 · 架构篇</h3>
-                    <span class="item-count">0篇文集</span>
+                    <span class="item-count">0篇文章</span>
                     <p>Unity游戏客户端框架</p>
                 </div>
-            </article>
-            <article class="item card">
+            </a>
+            <a class="item card item-link" href="article.html?category=game_battle" data-category="game_battle">
                 <div class="item-cover"><img src="images/card_2.png" alt=""></div>
                 <div class="item-body">
                     <h3>游戏开发 · 战斗篇</h3>
-                    <span class="item-count">0篇文集</span>
+                    <span class="item-count">0篇文章</span>
                     <p>游戏战斗系统</p>
                 </div>
-            </article>
-            <article class="item card">
+            </a>
+            <a class="item card item-link" href="article.html?category=game_rendering" data-category="game_rendering">
                 <div class="item-cover"><img src="images/card_3.png" alt=""></div>
                 <div class="item-body">
                     <h3>游戏开发 · 渲染篇</h3>
-                    <span class="item-count">0篇文集</span>
+                    <span class="item-count">1篇文章</span>
                     <p>Unity Shader</p>
                 </div>
-            </article>
-            <article class="item card">
+            </a>
+            <a class="item card item-link" href="article.html?category=game_performance" data-category="game_performance">
                 <div class="item-cover"><img src="images/card_4.png" alt=""></div>
                 <div class="item-body">
                     <h3>游戏开发 · 性能篇</h3>
-                    <span class="item-count">0篇文集</span>
+                    <span class="item-count">0篇文章</span>
                     <p>Unity游戏性能优化</p>
                 </div>
-            </article>
+            </a>
         </main>
 
     </div>
 
+    <script src="js/articles.js"></script>
+    <script>
+        // 根据文集清单动态更新卡片篇数 + 空文集点击提示
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.item-link').forEach(card => {
+                const cat = ARTICLES.find(c => c.id === card.dataset.category);
+                const span = card.querySelector('.item-count');
+                if (cat && span) span.textContent = cat.files.length + '篇文章';
+                // 没有文章的分类：点击不跳转，弹提示
+                if (cat && cat.files.length === 0) {
+                    card.addEventListener('click', e => {
+                        e.preventDefault();
+                        showToast('当前文集暂无文章~');
+                    });
+                }
+            });
+        });
+
+        // 轻提示
+        function showToast(msg) {
+            let t = document.querySelector('.toast');
+            if (!t) {
+                t = document.createElement('div');
+                t.className = 'toast';      // 关键：要用类名 .toast 才会套上样式
+                document.body.appendChild(t);
+            }
+            t.textContent = msg;
+            t.classList.add('show');
+            clearTimeout(t._timer);
+            t._timer = setTimeout(() => t.classList.remove('show'), 2000);
+        }
+    </script>
 </body>
 </html>

@@ -162,6 +162,36 @@
     display: flex;            /* 图在左，字在右 */
     overflow: hidden;
 }
+.item-link {
+    text-decoration: none;    /* 整卡可点击链接 */
+    color: inherit;
+    transition: transform .2s, box-shadow .2s;
+}
+.item-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* 轻提示 */
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s, transform .25s;
+    z-index: 100;
+}
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
 .item-cover {
     width: 160px;             /* 左侧图片宽度 */
     flex-shrink: 0;
